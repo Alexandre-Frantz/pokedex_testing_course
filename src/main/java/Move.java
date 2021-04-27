@@ -220,11 +220,7 @@ public class Move {
 
     }
 
-    // I removed the string formating because it was returning the doubles with "," in the test, thus making it fail
-    // Since I assume the test case must hold given its definition, I decided to fix this failure by removing the string formating
-    // Otherwise it was returning doubles likes this : 60,00 instead of 60.00 (which is the correct representatin of doubles as far I know)
-    // Another fix would be to change the assertEquals to check for 60,00 in the test instead of 60.00
-    public String attack(Pokemon defendingPokemon) {
+      public String attack(Pokemon defendingPokemon) {
       Double damage;
 
       if (this.hitCalculator()) {
@@ -232,19 +228,19 @@ public class Move {
         double multiplier = this.effectiveness(defendingPokemon);
         if (multiplier > 1) {
           defendingPokemon.hp -= damage * multiplier;
-          //return String.format("The attack is super effective and did %.2f damage!!", damage * multiplier);
-          return "The attack is super effective and did " + damage * multiplier + " damage!!";
+          return String.format("The attack is super effective and did %.2f damage!!", damage * multiplier);
+
 
         } else if (multiplier == 0) {
           return "The attack is ineffective and did 0 damage.";
         } else if (multiplier < 1) {
           defendingPokemon.hp -= damage * multiplier;
-          //return String.format("The attack is not very effective and did %.2f damage.", damage * multiplier);
-          return"The attack is not very effective and did " +  damage * multiplier + " damage.";
+          return String.format("The attack is not very effective and did %.2f damage.", damage * multiplier);
+          
         } else {
           defendingPokemon.hp -= damage;
-          //return String.format("The attack does %.2f damage!", damage * multiplier);
-          return "The attack does " + damage * multiplier  + " damage!";
+          return String.format("The attack does %.2f damage!", damage * multiplier);
+          
         }
       } else {
         return "The attack misses and did 0 damage...";

@@ -45,11 +45,7 @@ public class AppTest extends FluentTest {
   
   /*@ClassRule
   public static ServerRule server = new ServerRule();*/
-  
-  
-  
-  
-  
+ 
   @Test
   @DisplayName("Correct Home Page - Acceptance Test")
   @Description("This test makes sure that the source page is the correct one, by verifying that Pokedex is found in the HTML source code")

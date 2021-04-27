@@ -50,7 +50,7 @@ public class PokemonTest {
 
   @Test
   @DisplayName("Pokemon is created correctly - Unit Test")
-  @Description("This test makes sure that Pokemon creation is created successfully")
+  @Description("This test verifies that Pokemon instances are created successfully")
   public void Pokemon_instantiatesCorrectly_true() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     assertEquals(true, myPokemon instanceof Pokemon);
@@ -58,7 +58,7 @@ public class PokemonTest {
 
   @Test
   @DisplayName("Get Pokemon Name - Unit Test")
-  @Description("This test makes sure that we are able to access the access the Pokemon's name attribute through the getter method")
+  @Description("This verifies that we are able to access the Pokemon's name attribute through the getter method, and that it returns the correct value")
   public void getName_pokemonInstantiatesWithName_String() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     assertEquals("Squirtle", myPokemon.getName());
@@ -66,14 +66,14 @@ public class PokemonTest {
 
   @Test
   @DisplayName("Empty Pokedex at launch - Unit Test")
-  @Description("This test checks that the size of the Pokemon list is 0 at the start")
+  @Description("This test verifies that the size of the Pokemon list is 0 at the start")
   public void all_emptyAtFirst() {
     assertEquals(Pokemon.all().size(), 0);
   }
 
   @Test
   @DisplayName("Pokemons are the same Instances - Unit Test")
-  @Description("This test checks if two Pokemon instances are the same, given identical attributes")
+  @Description("Verifies if two Pokemon instances are the same, given identical attribute values")
   public void equals_returnsTrueIfPokemonAreTheSame_true() {
     Pokemon firstPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     Pokemon secondPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
@@ -82,7 +82,7 @@ public class PokemonTest {
 
   @Test
   @DisplayName("Pokemon instance is saved correctly - Integration Test")
-  @Description("This test checks if a created Pokemon instance is saved correctly (i.e added to the global Pokemon List), by checking that the size of the list is equal to 1 after inserting the first Pokemon")
+  @Description("This test checks if a new Pokemon instance is saved correctly (i.e added to the global Pokemon List), by checking that the size of the list is equal to 1 after inserting the first Pokemon")
   public void save_savesPokemonCorrectly_1() {
     Pokemon newPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     newPokemon.save();
@@ -91,7 +91,7 @@ public class PokemonTest {
 
   @Test
   @DisplayName("Pokemon is found in Database - Integration Test")
-  @Description("This test makes sure that the correct Pokemon is found in the database when queried by the instance Id attribute")
+  @Description("This test checks that the correct Pokemon is found in the database when queried by the instance's Id attribute")
   public void find_findsPokemonInDatabase_true() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     myPokemon.save();
@@ -101,7 +101,7 @@ public class PokemonTest {
 
   @Test
   @DisplayName("Add attack move to Pokemon - Integration Test")
-  @Description("This test makes sure that a move is correctly added to a Pokemon instance, by checking whether the move Id is equal to the Pokemon's new move Id")
+  @Description("This test makes sure that a move is correctly added to a Pokemon instance, by checking whether the move Id is equal to the Pokemon's newly added move Id")
   public void addMove_addMoveToPokemon() {
     Move myMove = new Move("Punch", "Normal", 50.0, 100);
     myMove.save();
@@ -128,7 +128,7 @@ public class PokemonTest {
 
   @Test
   @DisplayName("Retrieve Pokemon from database by Name attribute - Integration Test")
-  @Description("This test verifies that the correct Pokemon is extracted from the database when querying with the given Name attribute")
+  @Description("This test verifies that the correct Pokemon is extracted from the database when querying with the Name attribute")
   public void searchByName_findAllPokemonWithSearchInputString_List() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     myPokemon.save();
@@ -138,7 +138,7 @@ public class PokemonTest {
   
   @Test
   @DisplayName("Damage applied to Defending Pokemon - Integration Test")
-  @Description("This test verifies that the defending Pokemon is applied the correct amount of Damage after a specific attack type (Here : Water). The hp attribute is checked after the attack")
+  @Description("This test verifies that the defending Pokemon is applied the correct amount of Damage after receiving a specific attack type. The hp attribute is checked after the attack")
   public void fighting_damagesDefender() {
     myPokemon.save();
     myPokemon.hp = 500;
