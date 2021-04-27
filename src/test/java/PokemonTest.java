@@ -174,5 +174,36 @@ public class PokemonTest {
     }
     
   }
+  
+  /* New Tests to attempt to achiev 100% coverage score
+   * 
+   */
+  
+  @Test
+  public void getAttributes_getPokemonAttributesCorrectly() {
+	  Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
+	  Pokemon myPokemon2 = new Pokemon("Blastoid", "Water", "None", "A dangerous turtle", 50.0, 12, 16, false);
+	  myPokemon.hp = 500;
+	  myPokemon.save();
+	  myPokemon2.save();
+	  
+	  assertEquals("Squirtle", myPokemon.getName());
+	  assertEquals("Water", myPokemon.getType1());
+	  assertEquals("None", myPokemon.getType2());
+	  assertEquals("A cute turtle", myPokemon.getDescription());
+	  assertEquals(500, myPokemon.getHp());
+	  //assertEquals(50.0, myPokemon.getWeight()); // not sure why I get a deprecation warning for this command
+	  assertEquals(12, myPokemon.getHeight());
+	  assertEquals(16, myPokemon.getEvolves());
+	  assertEquals(false,myPokemon.getMega_evolves());
+	  
+  }
+  @Test
+  public void equals_returnsFalseIfPokemonAreNotTheSame_true() {
+	    Pokemon firstPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
+	    Pokemon secondPokemon = new Pokemon("Blastoid", "Water", "None", "A dangerous turtle", 50.0, 12, 16, false);
+	    assertFalse(firstPokemon.equals(secondPokemon));
+	  }
+  
 
 }

@@ -281,5 +281,4 @@ public class Move {
         return pokemons;
       }
     }
-
-  }
+}
