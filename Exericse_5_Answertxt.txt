@@ -1,0 +1,25 @@
+ _______________________________________________________						|
+|							|
+|		Question 5 - Coverage Score 		|
+|							|
+|_______________________________________________________|
+
+
+I attempted to increase the Coverage score up to 100%, however due to the time remaining I unfortunately could not achieve this. 
+The setup issues and additional related errors that came after made me lose a lot of time, and therefore was not able to fully complete this exercise.
+
+---- Coverage Score ------------------ 
+
+- Final Coverage Score achieved is 43,7 %
+
+----- Analysis of difference between Instruction and Branch Coverage------------
+
+Before answering how we can ensure 100% coverage score on both Instruction and Branch tests, we need to define each one. 
+Instruction coverage, otherwise called Line coverage, is the amount of lines that are executed by the tests.
+On the other hand, Branch coverage score is defined as the amount of different code blocks that have been executed.
+For example a switch or if statement can be considered a block of code that contains branches (each condition is each own code branch).
+
+So how can we ensure 100% on both Instruction and Branch Coverage? We could argue that if we achieve 100% Branch coverage, this implies that we also reach 100% Instruction coverage. 
+However, the opposite does not hold as a branch might not contain a statement at all (e.g. when skipping other branches that don't necessarily contain statements, like in a switch) 
+and thus if we assume that 100% Instruction coverage implies 100% Branch coverage, then that branch will not be covered. Therefore to answer the question, achieving 100% branch coverage implies that we have achieved 100% line coverage.
+
